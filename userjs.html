@@ -87,7 +87,7 @@
 
             </table>
 
-            <input type="button" value="Iniciar sesion" onclick="alert(dirverifier())">
+            <input type="button" value="Iniciar sesion" onclick="alert(checker())">
             
         </div>
 
@@ -98,13 +98,25 @@
     </form>
 
 <script>
+    function checker() {
+        var validaciones = [
+            nameverifier(),
+            lastnameverifier(),
+            dirverifier(),
+            ccuserverifier(),
+            ccpaswtverifier(),
+            emailverifier()
+        ];
 
+        return validaciones;
+    }
+    
     function nameverifier() { // listo
         var nm = document.getElementById('name');
         if (nm.value.length > 1 && nm.value.length < 25) {
             return true;
         }
-        alert('El nombre excede el maximo de caracteres : 25');
+        alert('El nombre excede el maximo de caracteres (25) o se encuentra vacio');
         return false;
     }
 
@@ -113,7 +125,7 @@
         if (lastnm.value.length > 1 && lastnm.value.length < 25) {
             return true;
         }
-        alert('El apellido excede el maximo de caracteres : 25');
+        alert('El apellido excede el maximo de caracteres (25) o se encuentra vacio');
         return false;
     }
 
@@ -135,12 +147,22 @@
         return false;
     }
 
+    function ccpaswtverifier() {
+        var ccpw = document.getElementById('ccpaswt');
+        if (ccpw.value.length > 15 && ccpw.value.length < 20) {
+            
+        }
+
+        alert("La contraseña debe tener una longitud de máximo 20 y mínimo 15 caracteres. debe contener mayúsculas , numeros, letras y/o los siguientes caracteres [#,%,/,&]")
+        return false;
+    }
+
     function emailverifier() { // listo
         var ema = document.getElementById('email');
         if (ema.value.length > 1 && ema.value.length < 120) {
             return true;
         }
-        alert('El email excede el maximo de caracteres : 120');
+        alert('El email excede el maximo de caracteres (120) o se encuentra vacio');
         return false;
     }
 
