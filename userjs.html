@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Formulario de Inicio de Sesión</h2>
+
+    <form action="userboostrap.html" method="post">
+        <input type="hidden" required value="">
+        <div class="container" style="background-color:#a1a1a1">
+            <table>
+                <tr>
+                    <th>id usuario</th>
+                    <th><input type="number" placeholder="Ingresa tu id de usuario" id="userid" required></th>
+                </tr>
+
+                <tr>
+                    <th>Pais</th>
+                    <th><input type="number" placeholder="Ingresa el id de tu pais" id="countryid" required></th>
+                </tr>
+            
+                <tr>
+                    <th>Nombre</th>
+                    <th><input type="text" placeholder="Ingresa tu nombre" id="name" required></th>
+                </tr>
+
+                <tr>
+                    <th>Apellido</th>
+                    <th><input type="text" placeholder="Ingresa tu apellido" id="lastname" required></th>
+                </tr>
+            
+                <tr>
+                    <th>Direccion</th>
+                    <th><input type="search" placeholder="Ingresa tu direccion" id="dir" required></th>
+                </tr>
+
+                <tr>
+                    <th>ccusuario</th>
+                    <th><input type="text" placeholder="Ingresa tu ccusuario" id="ccuser" required></th>      
+                </tr>
+
+                <tr>
+                    <th>ccpaswt</th>
+                    <th><input type="password" placeholder="Ingresa tu ccpaswt" id="ccpaswt" required></th>       
+                </tr>
+
+                <tr>
+                    <th>Email</th>
+                    <th><input type="email" placeholder="Ingresa tu Email" id="email" required></th>
+                </tr>
+
+                <tr>
+                    <th>Telefono</th>
+                    <th><input type="tel" placeholder="Ingresa tu telefono" id="phonenumber" required></th> 
+                </tr>
+
+                <tr>
+                    <th>color</th>
+                    <th>
+                        <input type="radio" name="fav_color" value="Negro">
+                        <label style="color: black;"> Negro </label>
+                        <input type="radio" name="fav_color" value="Beich">
+                        <label style="color: white;"> Beich </label>
+                        <input type="radio" name="fav_color" value="Rojo">
+                        <label style="color: red;"> Rojo </label>
+                        <input type="radio" name="fav_color" value="Amarillo">
+                        <label style="color: yellow;"> Amarillo </label>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>Marca preferida</th>
+                    <th>
+                        <input type="radio" name="fav_marca" value="Audi">
+                        <label> Audi </label>
+                        <input type="radio" name="fav_marca" value="Chevrolet">
+                        <label> Chevrolet </label>
+                        <input type="radio" name="fav_marca" value="Toyota">
+                        <label> Toyota </label>
+                        <input type="radio" name="fav_marca" value="Ferrari">
+                        <label> Ferrari </label>
+                    </th>
+                </tr>
+
+            </table>
+
+            <input type="button" value="Iniciar sesion" onclick="alert(pwverifier())">
+            
+        </div>
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button type="reset" class="cancelbtn">reset</button>
+            <span class="psw">Olvidaste tu <a href="#">contraseña?</a></span>
+        </div>
+    </form>
+
+<script>
+
+    function nameverifier() {
+        var nm = document.getElementById('name');
+        if (nm.value.length > 1 && nm.value.length < 25) {
+            return true;
+        }
+        alert('El nombre excede el maximo de caracteres : 25');
+        return false;
+    }
+
+    function lastnameverifier() {
+        var lastnm = document.getElementById('lastname');
+        if (lastnm.value.length > 1 && lastnm.value.length < 25) {
+            return true;
+        }
+        alert('El apellido excede el maximo de caracteres : 25');
+        return false;
+    }
+
+    function dirverifier() {
+
+    }
+
+    function ccuserverifier() {
+        var ccu = document.getElementById('ccuser');
+        if (ccu.value.length > 1 && ccu.value.length < 20) {
+            return true;
+        }
+        alert('El ccusuario excede el maximo de caracteres : 20');
+        return false;
+    }
+
+    function emailverifier() {
+        var ema = document.getElementById('email');
+        if (ema.value.length > 1 && ema.value.length < 120) {
+            return true;
+        }
+        alert('El email excede el maximo de caracteres : 120');
+        return false;
+    }
+
+</script>
+
+</body>
+</html>
