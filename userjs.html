@@ -87,7 +87,7 @@
 
             </table>
 
-            <input type="button" value="Iniciar sesion" onclick="alert(pwverifier())">
+            <input type="button" value="Iniciar sesion" onclick="alert(dirverifier())">
             
         </div>
 
@@ -99,7 +99,7 @@
 
 <script>
 
-    function nameverifier() {
+    function nameverifier() { // listo
         var nm = document.getElementById('name');
         if (nm.value.length > 1 && nm.value.length < 25) {
             return true;
@@ -108,7 +108,7 @@
         return false;
     }
 
-    function lastnameverifier() {
+    function lastnameverifier() { // listo
         var lastnm = document.getElementById('lastname');
         if (lastnm.value.length > 1 && lastnm.value.length < 25) {
             return true;
@@ -117,8 +117,13 @@
         return false;
     }
 
-    function dirverifier() {
-
+    function dirverifier() { //listo
+        var dir = document.getElementById('dir').value;
+        if (dir.startsWith("cll") || dir.startsWith("cra") || dir.startsWith("av") || dir.startsWith("anv") || dir.startsWith("trans") ) {
+            return true;
+        }
+        alert('La direccion debe empezar por cll, cra, av, anv o trans')
+        return false;
     }
 
     function ccuserverifier() {
@@ -126,11 +131,11 @@
         if (ccu.value.length > 1 && ccu.value.length < 20) {
             return true;
         }
-        alert('El ccusuario excede el maximo de caracteres : 20');
+        alert('El ccusuario excede el maximo de caracteres (20) \n o contiene caracteres extraños.');
         return false;
     }
 
-    function emailverifier() {
+    function emailverifier() { // listo
         var ema = document.getElementById('email');
         if (ema.value.length > 1 && ema.value.length < 120) {
             return true;

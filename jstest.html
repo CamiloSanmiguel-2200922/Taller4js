@@ -15,13 +15,11 @@
 
     <script>
         var susu = document.getElementById('submi');
-        var aaa = document.getElementById('testo');
         var j = "lechugas";
         function sasa(aaa) {
-            alert(j.length);
-            alert(aaa.lenght);
-            susu.setAttribute('type','submit');
-            
+            if (aaa.value.match("a")) {
+                alert(aaa.value)
+            }
         }
     </script>
 
