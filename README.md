@@ -2,4 +2,4 @@
 taller 4 javascript
 
 ## Camilo Andres Sanmiguel - 2200922
-## pana jeff :v
+## Jefferson Holguín Ferro - 2215502 :v
