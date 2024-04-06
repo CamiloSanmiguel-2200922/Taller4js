@@ -138,22 +138,34 @@
         return false;
     }
 
-    function ccuserverifier() { // falta lo de caracteres extraños
-        var ccu = document.getElementById('ccuser');
-        if (ccu.value.length > 1 && ccu.value.length < 20) {
-            return true;
-        }
-        alert('El ccusuario excede el maximo de caracteres (20) \n o contiene caracteres extraños.');
+   function ccuserverifier() { //listo
+    var ccu = document.getElementById('ccuser');
+    var ccuValue = ccu.value.trim(); 
+    var regex = /^[a-zA-Z0-9_\-]+$/;
+
+    if (ccuValue.length > 1 && ccuValue.length < 20 && regex.test(ccuValue)) {
+        return true;
+    } else {
+                alert("El nombre de usuario debe tener entre 2 y 19 caracteres y solo puede contener letras, números, guiones bajos.");
         return false;
     }
+    }
 
-    function ccpaswtverifier() { // falta todo...
-        var ccpw = document.getElementById('ccpaswt');
-        if (ccpw.value.length > 15 && ccpw.value.length < 20) {
-            
+   function ccpaswdVerifier() {//listo
+    var ccpaswd = document.getElementById('ccpaswd').value;
+    var ccconfirmpaswd = document.getElementById('ccconfirmpaswd').value;
+
+    var regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[#%/&])[A-Za-z\d#%/&]{15,20}$/;
+    if (ccpaswd.length >= 15 && ccpaswd.length <= 20 && regex.test(ccpaswd)) {
+       
+        if (ccpaswd === ccconfirmpaswd) {
+            return true;
+        } else {
+            alert('El campo Confirmar Contraseña debe ser idéntico al campo Contraseña.');
+            return false;
         }
-
-        alert("La contraseña debe tener una longitud de máximo 20 y mínimo 15 caracteres. debe contener mayúsculas , numeros, letras y/o los siguientes caracteres [#,%,/,&]")
+    } else {
+        alert('El campo Contraseña debe tener entre 15 y 20 caracteres y contener al menos una mayúscula, un número y uno de los siguientes caracteres: #, %, /, &.');
         return false;
     }
 
